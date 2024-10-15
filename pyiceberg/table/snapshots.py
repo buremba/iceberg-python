@@ -179,7 +179,7 @@ class Summary(IcebergBaseModel, Mapping[str, str]):
     like snapshot expiration, to skip processing certain snapshots.
     """
 
-    operation: Operation = Field()
+    operation: Operation = Field(default = Operation.APPEND)
     _additional_properties: Dict[str, str] = PrivateAttr()
 
     def __init__(self, operation: Operation, **data: Any) -> None:
